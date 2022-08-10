@@ -1,0 +1,9 @@
+@use "./constant" as *;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: $font_family;
+  list-style: none;
+  text-decoration: none !important;
+}

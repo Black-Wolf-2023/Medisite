@@ -1,0 +1,85 @@
+@use "./mixen" as *;
+@use "./constant" as *;
+.hero {
+  height: calc(100vh - 60px);
+  background-image: url("../../assets/main/hero.svg");
+  background-position: bottom left;
+  background-size: cover;
+  .container {
+    .buttons {
+      button {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        font-weight: 500;
+      }
+      button::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        z-index: -1;
+        border-radius: 50%;
+        background-color: $white_color;
+        transition: all .5s ease-in-out;
+      }
+      button::before {
+        content: "";
+        position: absolute;
+        bottom:0;
+        right: 0;
+        width: 10px;
+        height: 10px;
+        z-index: -1;
+        border-radius: 50%;
+        background-color: $white_color;
+        transition: all .5s ease-in-out;
+      }
+      button:hover::after,button:hover::before{
+        width: 200px;
+        height: 200px;
+        transform: translate(40px,40px);
+      }
+      button:hover{
+        transform: scale(1.1);
+      }
+      :nth-child(2)::after,:nth-child(2)::before{
+        background-color: $primary_color;
+      }
+      :nth-child(2):hover::after,:nth-child(2):hover::before{
+        width: 400px;
+        height: 400px;
+        transform: translate(100px,100px);
+      }
+    }
+    .row {
+      .hero_img {
+        transform: translateY(100px);
+        animation: hero_img 2s ease-in-out infinite alternate;
+      }
+    }
+  }
+}
+
+@include media(md) {
+  .hero {
+    .container {
+      .row {
+        .hero_img {
+          transform: translateY(70px);
+        }
+      }
+    }
+  }
+}
+
+@keyframes hero_img{
+  from{
+    transform: translateY(50px);
+  }
+  to{
+    transform: translateY(100px);
+  }
+}

@@ -1,0 +1,97 @@
+@use "./mixen" as *;
+.info {
+  .container {
+    .row {
+      .content {
+        p {
+          padding-right: 60px;
+        }
+      }
+      .imges {
+        :nth-child(1) {
+          top: 50%;
+          transform: translateY(-50%);
+          left: -20%;
+        }
+      }
+    }
+  }
+}
+
+@include media(lg) {
+  .info {
+    .container {
+      .row {
+        padding: 50px;
+      }
+    }
+  }
+}
+
+@include media(md) {
+  .info {
+    .container {
+      .row {
+        padding: 50px;
+        .imges {
+          text-align: center;
+          :nth-child(1) {
+            left: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media(sm) {
+  .info {
+    .container {
+      .row {
+        .content {
+          p {
+            padding-right: 0px;
+          }
+        }
+        .imges {
+          text-align: center;
+          :nth-child(1) {
+            width: 200px;
+            height: 200px;
+            left: 5%;
+          }
+          :nth-child(2) {
+            width: 250px;
+            height: 250px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media(xl) {
+  .info {
+    .container {
+      .row {
+        .content{
+            p{
+                padding-right: 0px;
+            }
+        }
+        .imges {
+          text-align: center;
+          :nth-child(1) {
+            width: 200px;
+            height: 200px;
+            left: 5%;
+          }
+          :nth-child(2) {
+            width: 250px;
+            height: 250px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@mixin media($size) {
+  @if $size == lg {
+    @media screen and (min-width: 1067px) {
+      @content;
+    }
+  } @else if $size == md {
+    @media screen and (min-width: 676px) and (max-width: 1066px) {
+      @content;
+    }
+  } @else if $size == sm {
+    @media screen and (min-width: 377px) and (max-width: 675px) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: 200px) and (max-width: 376px) {
+      @content;
+    }
+  }
+}

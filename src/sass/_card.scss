@@ -1,0 +1,22 @@
+@use "./constant" as *;
+@use "./mixen" as *;
+
+.cards {
+  .container {
+    .row {
+      .card{
+        transition: all .5s ease-in-out;
+      }
+      .card:hover{
+        cursor: pointer;
+        background-color: $primary_color;
+        transform: scale(1.2);
+        z-index: 2;
+      }
+      .card p {
+        font-size: $main_font/1.5;
+        color: $gray;
+      }
+    }
+  }
+}

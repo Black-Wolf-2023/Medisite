@@ -1,0 +1,69 @@
+@use "./mixen" as *;
+@use "./constant" as *;
+#navigation {
+  .nav_animater {
+    animation: naver .3s 1 ease-in-out alternate;
+  }
+  .container {
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    nav {
+      ul {
+        a {
+          font-weight: 500;
+        }
+        a:hover{
+          color: $primary_color !important;
+        }
+        li .active_link {
+          background-color: $white_color;
+          padding: 5px;
+          border-radius: 5px;
+          color: $main_color !important;
+        }
+      }
+    }
+  }
+}
+
+@include media(sm) {
+  .container {
+    nav {
+      border-bottom: 1px solid $white_color;
+      ul {
+        li .active_link {
+          background-color: $white_color;
+          padding: 10px;
+          color: $main_color !important;
+        }
+      }
+    }
+  }
+}
+
+@include media(xl) {
+  .container {
+    nav {
+      border-bottom: 1px solid $white_color;
+      ul {
+        li .active_link {
+          background-color: $white_color;
+          padding: 10px;
+          color: $main_color !important;
+        }
+      }
+    }
+  }
+}
+
+@keyframes naver {
+  from {
+    top: -20%;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
